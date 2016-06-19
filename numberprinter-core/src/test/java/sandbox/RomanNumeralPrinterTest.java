@@ -1,4 +1,4 @@
-package org.matt.sandbox;
+package sandbox;
 
 import org.junit.Test;
 

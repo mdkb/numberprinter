@@ -22,11 +22,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="numberprinter-rest" />
         <module name="springboot-rest" />
+      </profile>
+      <profile default="false" name="Annotation profile for numberprinter-core" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="numberprinter-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="numberprinter" target="1.8" />
+      <module name="numberprinter-core" target="1.8" />
+      <module name="numberprinter-rest" target="1.8" />
       <module name="springboot-rest" target="1.8" />
     </bytecodeTargetLevel>
   </component>

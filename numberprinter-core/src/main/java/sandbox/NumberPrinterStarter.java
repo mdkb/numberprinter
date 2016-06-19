@@ -1,4 +1,4 @@
-package org.matt.sandbox;
+package sandbox;
 
 /**
  * Created by matt on 25/04/16.
