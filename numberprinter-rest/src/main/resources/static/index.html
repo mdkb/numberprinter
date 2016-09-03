@@ -10,8 +10,9 @@
 <body  >
 <div ng-app="myApp" ng-controller="myCtrl">
       <form>
+          Output: <select ng-model="selectedPrinter" ng-options="x for x in numberprinters">
           Number: <input type="number" ng-model="number">
-          <button ng-click="submit(number)">submit</button>
+          <button ng-click="submit(selectedPrinter, number)">submit</button>
       </form>
       <p> result {{printedNumber.number}} = {{printedNumber.value}}</p>
     <br>

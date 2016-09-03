@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class NumberPrinterController {
 
+
+
+    @RequestMapping("/numberprinters")
+    public @ResponseBody String[]  getPrinters() throws Exception {
+        return new String[] {"roman", "word"};
+    }
+
     // TODO better handle exception
     @RequestMapping("/printnumber/roman/{number}")
     public @ResponseBody PrintedNumber  printRomanNumber(@PathVariable("number") int number) throws Exception {

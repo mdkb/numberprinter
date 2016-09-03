@@ -5,7 +5,7 @@
 
 
     <groupId>org.matt.sandbox</groupId>
-    <artifactId>springboot-rest</artifactId>
+    <artifactId>numberprinter-rest</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <parent>
@@ -26,7 +26,7 @@
 
         <dependency>
             <groupId>org.matt.sandbox</groupId>
-            <artifactId>numberprinter</artifactId>
+            <artifactId>numberprinter-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
