@@ -2,17 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>THis is the Title!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>BootStrapped Number Printer REST test</title>
 
     <link rel="stylesheet" href="./bower_components/bootstrap-css-only/css/bootstrap.min.css" />
 
 </head>
 <body  >
-<div ng-app="myApp" ng-controller="myCtrl">
+<div ng-app="myApp" ng-controller="myCtrl" class="form-group">
       <form>
-          Output: <select ng-model="selectedPrinter" ng-options="x for x in numberprinters">
-          Number: <input type="number" ng-model="number">
-          <button ng-click="submit(selectedPrinter, number)">submit</button>
+          <label for="printer">Output Printer:</label>
+          <select class="form-control" ng-model="selectedPrinter" ng-options="x for x in numberprinters" id="printer"/>
+          <select class="form-control" ng-model="selectedPrinter" ng-options="x for x in numberprinters" id="printer"/>
+
+          <label for="numberinput">Number:</label>
+
+          <!-- TODO when selecting printer set range tooltip and validation criteria -->
+          <input class="form-control" type="number" ng-model="number" id="numberinput"/>
+
+
+          <button class="btn btn-lg btn-success" ng-click="submit(selectedPrinter, number)">submit</button>
       </form>
       <p> result {{printedNumber.number}} = {{printedNumber.value}}</p>
     <br>

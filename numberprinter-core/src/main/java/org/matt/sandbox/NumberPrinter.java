@@ -5,6 +5,9 @@ package org.matt.sandbox;
  */
 public interface NumberPrinter {
 
-    String print(int number) throws Exception;
+    String print(int number) throws NumberPrinterException;
+
+    int getMinNumber();
+    int getMaxNumber();
 
 }

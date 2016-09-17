@@ -13,22 +13,22 @@ public class WordNumberPrinter implements NumberPrinter {
     private static final String THOUSAND = " thousand";
 
 
-    private String print(int number, String[] words, String word, String spacer, int denominator) throws Exception {
+    private String print(int number, String[] words, String word, String spacer, int denominator) throws NumberPrinterException {
         int quotient = number / denominator;
         int remainder = number % denominator;
         return words[quotient] + word + (remainder == 0 ? "" : (spacer + print(remainder)));
     }
 
 
-    private String print(int number, String word, String spacer, int denominator) throws Exception {
+    private String print(int number, String word, String spacer, int denominator) throws NumberPrinterException {
         int quotient = number / denominator;
         int remainder = number % denominator;
         return print(quotient) + word + (remainder == 0 ? "" : (spacer + print(remainder)));
     }
 
-    public String print(int number) throws Exception {
+    public String print(int number) throws NumberPrinterException {
         if (number < 0 ) {
-            throw new Exception("negative numbers not supported");
+            throw new NumberPrinterException("negative numbers not supported");
         }
         if (number < 20) {
             return WORDS[number];
@@ -43,6 +43,16 @@ public class WordNumberPrinter implements NumberPrinter {
             return print(number, THOUSAND, " ", 1000);
         }
 
-        throw new Exception("number " + number + " is out of range 0-100000");
+        throw new NumberPrinterException("number " + number + " is out of range 0-100000");
+    }
+
+    @Override
+    public int getMinNumber() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxNumber() {
+        return 999999;
     }
 }

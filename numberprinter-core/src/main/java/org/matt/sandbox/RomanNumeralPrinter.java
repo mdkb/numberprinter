@@ -21,7 +21,7 @@ public class RomanNumeralPrinter implements NumberPrinter {
         map.put(1000, "M");
     }
 
-    private String  print(int number, int factor) throws Exception {
+    private String  print(int number, int factor) throws NumberPrinterException {
         int one = 1 * factor;
         int four = 4 * factor;
         int five = 5 * factor;
@@ -43,14 +43,14 @@ public class RomanNumeralPrinter implements NumberPrinter {
             return print(one) + print(ten) +  printIfNotZero(remainder);
         }
 
-        throw new Exception("out of range");
+        throw new NumberPrinterException("out of range");
     }
 
 
 
-    public String print(int number) throws Exception {
+    public String print(int number) throws NumberPrinterException {
         if (number < 1) {
-            throw new Exception("out of range");
+            throw new NumberPrinterException("out of range");
         }
 
         if (map.containsKey(number)) {
@@ -73,11 +73,21 @@ public class RomanNumeralPrinter implements NumberPrinter {
         if (number < 4000) {
             return print(number, 1000);
         }
-        throw new Exception("out of range");
+        throw new NumberPrinterException("out of range");
 
     }
 
-    private String printIfNotZero(int number) throws Exception {
+    @Override
+    public int getMinNumber() {
+        return 1;
+    }
+
+    @Override
+    public int getMaxNumber() {
+        return 3999;
+    }
+
+    private String printIfNotZero(int number) throws NumberPrinterException {
         if (number == 0) {
             return "";
         }
